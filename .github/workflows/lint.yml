@@ -1,4 +1,4 @@
-name: Lint
+ename: Lint
 
 on:
   push:
@@ -18,6 +18,6 @@ jobs:
       - name: Run flake8
         uses: py-actions/flake8@v1
         with:
-          exclude: hello2.py
+          exclude: exclude.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
