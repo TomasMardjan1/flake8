@@ -16,6 +16,6 @@ jobs:
       - name: Run flake8
         uses: suo/flake8-github-action@releases/v1
         with:
-          exclude: hello2.py
+          exclude: hello.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
