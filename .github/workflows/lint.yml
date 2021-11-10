@@ -21,6 +21,8 @@ jobs:
           exclude: exclude.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Test with pytest
-        run: pip install pytest
-             pytest
+      - name: pytest
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo build --release --all-features
