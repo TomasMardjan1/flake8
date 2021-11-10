@@ -21,8 +21,8 @@ jobs:
           exclude: exclude.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: pytest
-        uses: actions-rs/toolchain@v1
+      - name: Pytest Action Step
+        id: pytest
+        uses: paolorechia/fast-pytest-github-action@develop
         with:
-          toolchain: stable
-      - run: cargo build --release --all-features
+          pytest_args: 'hello.py'
