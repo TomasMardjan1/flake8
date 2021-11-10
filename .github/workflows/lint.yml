@@ -1,9 +1,8 @@
 name: Lint
 
 on:
-  push:
-    paths:
-      - '*.py'
+  pull_request:
+    branches: [ main ]
 
 jobs:
   flake8_py3:
@@ -21,9 +20,3 @@ jobs:
           exclude: exclude.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Pytest Action Step
-        id: pytest
-        uses: paolorechia/fast-pytest-github-action@develop
-        with:
-          pytest_args: '.'
-          requirements_file: 'test_requirements.txt'
